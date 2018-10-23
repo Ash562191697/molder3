@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>崩坏3</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		.clearFix:after{
+			content:'';
+			display:block;
+			clear:both;
+		}
+		.bgimage{
+			background:#666 url(./img/banner.jpg);
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size:cover;
+			background-position:center; 
+		}
+		header{
+			background:rgba(0,0,0,0.15);
+		}
+		nav{
+			height:50px;
+			background:transparent;
+		}
+		nav ul{
+			list-style:none;
+		}
+		nav .logo{
+			float:left;
+			margin-left:20px;
+			font-size:20px;
+			font-weight:600;
+			line-height:50px;
+		}
+		nav .logo a{
+			color: #fff;
+			letter-spacing:2px;
+			text-decoration:none;
+		}
+		nav ul li{
+			display: inline-block;
+			line-height:50px;
+			float:right;
+			margin-right:20px;			
+		}
+		nav ul li a{
+			letter-spacing:2px;
+			text-decoration:none;
+			height:inherit;
+			color:#fff;
+		}
+		nav ul li a:hover{
+			transition:all 0.5s;
+			box-shadow:0px 10px 10px rgba(0,0,0,0.5);
+			background-color:#e05965;
+		}
+		#banner{
+			height:600px;
+			background:transparent;
+		}
+		#banner .inner{
+			max-width:300px;
+			margin:0 auto;
+			text-align:center;
+			position:relative;
+			top:150px;
+		}
+		h1,.ptext{
+			color:#fff;
+		}
+		.ptext{
+			font-size:18px;
+			letter-spacing:2px;
+			line-height:30px;
+			margin:10px;
+		}
+		.sbtn{
+			transition: all 1s;
+		}
+		.sbtn img:hover{
+			transform: scale(1.1,1.1);
+		}
+
+		/*green*/
+		h2{
+			padding:20px;
+			text-align:center;
+			/*font-size: 30px;*/
+		}
+		.hr{
+			width:60%;
+			height:2px;
+			margin:20px auto;
+		}
+		.green-section{
+			background:#089DB0;
+			color:#fff;
+			text-align:center;
+		}
+		.green-section .hr{
+			background:#078494;
+		}
+		.wrapper{
+			max-width:1080px;
+			margin:0 auto;
+		}
+		.green-section .icon-group .icon{
+			display: inline-block;
+			/*border: 1px solid #0D6F7C;*/
+			width:120px;
+			height:100px;
+			margin: 25px;
+		}
+		.green-section .icon-group .icon img{
+			width:100%;
+			height:100%;
+		}
+		.green-section .icon-group .icon img:hover{
+			transition:all 0.5s;
+			box-shadow:0px 10px 10px rgba(0,0,0,0.5);
+		}
+
+		/*gray*/
+		.gray-section{
+			background:#3c3232;
+			color:white;
+		}
+		.gray-section .img-section{
+			width:45%;
+		}
+		.img-section img{
+			width:100%;
+			height:100%;
+		}
+		.gray-section .text-section{
+			width:55%;
+			line-height:30px;
+		}
+		
+		.article-preview >div
+		{
+			float: left;
+			font-size:0;
+		}
+		.article-preview:nth-child(odd){
+			background:rgba(255,255,255,0.05);
+		}
+		.article-preview:after{
+			content:'';
+			display:block;
+			clear:both;
+		}
+		.text-section h2{
+			font-size:22px;
+			padding:20px;
+			letter-spacing:1px;
+		}
+		.text-section p{
+			font-size:16px;
+			text-indent:2em;
+			padding:20px;
+			letter-spacing:2px;
+
+		}
+
+		/*purple*/
+		.purple-section{
+			padding:80px;
+			background:#262149;
+			color:#fff;
+			/*text-align:center;*/
+		}
+		.purple-section .heading-wrapper{
+			padding:5px;
+		}
+		.heading-wrapper .hr{
+			background:#6a0c6c;
+			width:80%;
+		}
+		.sub-heading{
+			text-align:center;
+			color:hotpink;
+			font-size:18px;
+		}
+		.card{
+			float:left;
+			width:50%;
+			min-height:150px;
+			padding:30px;
+			-webkit-box-sizing:border-box;
+			-moz-box-sizing:border-box;
+			box-sizing:border-box;
+			/*border:1px solid white;*/
+		}
+		.card h3 a{
+			text-decoration:none;
+			color:#fff;
+		}
+		.card h3 a:hover{
+			text-decoration:underline;
+			color:skyblue;
+		}
+		.card p{
+			font-size:15px;
+			padding:10px;
+		}
+ 		.card:first-child{
+			background: rgba(0,0,0,0.05);
+		}
+		.card:nth-child(2){
+			background: rgba(0,0,0,0.10);
+		}
+		.card:nth-child(3){
+			background: rgba(0,0,0,0.15);
+		}
+		.card:nth-child(4){
+			background: rgba(0,0,0,0.20);
+		}
+		.card:nth-child(5){
+			background: rgba(0,0,0,0.25);
+		}
+		.card:nth-child(6){
+			background: rgba(0,0,0,0.30);
+		}
+		footer{
+			background:transparent;
+			min-height:150px;
+			text-align:center;
+			font-size:18px;
+			color:black;
+		}
+		footer ul{
+			display: block;
+			margin:0 auto;
+			padding: 30px;
+		}
+		footer li{
+			display:inline-block;
+			padding:10px;
+		}
+		footer li a{
+			text-decoration:none;
+			color:black;
+		}
+		footer li a:hover{
+			text-decoration:underline;
+			font-weight:bold;
+			color:red;
+		}
+		@media all and (max-width: 83.75rem)
+		{
+			.card{
+				width:100%;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bgimage">	
+		<header>
+			<nav>
+				<div class="logo">
+					<a href="#">首页</a>
+				</div>
+				<ul>
+					<li><a href="#">游戏特色</a></li>
+					<li><a href="#">壁纸下载</a></li>
+					<li><a href="#">周边商城</a></li>
+					<li><a href="#">我的账户</a></li>
+				</ul>
+			</nav>
+			<div id="banner">
+				<div class="inner">
+					<h1>崩坏3</h1>
+					<p class="ptext">为世界上所有美好而战</p>
+					<div class="sbtn">
+						<a href="#"><img src="./img/social_btn.png"></a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="content">
+			<section class="green-section">
+				<div class="wrapper">
+					<div>
+						<h2>角色介绍(Role Introduction)</h2>
+						<div class="hr"></div>
+						<p>您将指挥各具特色的少女们进行战斗<br>
+						   她们有的是擅长远距离战斗的枪手<br>
+						   有的是身手敏捷的刺客<br>
+						   也有操纵重型机甲的少女
+						</p>
+					</div>
+					<div class="icon-group">
+						<span class="icon">
+							<a href="#kiana"><img src="./img/kiana.png" alt="空之律者"></a>
+						</span>
+						<span class="icon">
+							<a href="#kiana"><img src="./img/kallen.png" alt="原罪猎人"></a>
+						</span>
+						<span class="icon">
+							<a href="#sakura"><img src="./img/sakura.png" alt="真炎幸魂"></a>
+						</span>
+						<span class="icon">
+							<a href="#fuka"><img src="./img/fuka.png" alt="月轮"></a>
+						</span>
+						<span class="icon">
+							<a href="#theresa"><img src="./img/theresa.png" alt="月下初拥"></a>
+						</span>
+						<span class="icon">
+							<a href="#bronya"><img src="./img/bronya.png" alt="银狼的黎明"></a>
+						</span>
+					</div>
+				</div>
+			</section>
+			<section class="gray-section">
+				<div class="article-preview">
+					 <div class="img-section">
+					 	<img src="./img/kiana-info.png" id="kiana">
+					 </div>
+					 <div class="text-section">
+					 	<h2>空之律者</h2>
+					 	<p>[空之律者]是琪亚娜的生物属性角色，是[白骑士.月光]的觉醒角色。空之律者拥有特殊的能量槽——律者能量。拥有律者能量可以开启律者状态。召唤空间，闪避，QTE，释放必杀技都会回复一定的律者能量。空之律者的普通攻击[亚空之矛]由快速的五段远程攻击组成，第三击，第五击都会在敌人处召唤空间核心。最后一击能够把敌人短时间时空禁锢，同时小范围的敌人并引爆核心，造成范围伤害。普功期间按住攻击键可打出分支攻击[时空震荡]，对目标短时间时空禁锢，造成高额物理伤害，开启律者状态。律者状态下会消耗律者能量，攻击期间可以快速移动，并可以连续闪避两次，抗打断力提升。[相位穿梭]会直接触发区域时空减速，区域内敌人动作停止。必杀技[虚界降临]会撕裂空间，大范围对敌人造成大量伤害。</p>
+					 </div>
+				</div>
+				<div class="article-preview">				
+					 <div class="text-section">
+					 	<h2>原罪猎人</h2>
+					 	<p>「原罪猎人」是卡莲的机械属性角色，是「女武神·游侠」的觉醒角色。原罪猎人的普通攻击由四段射击组成，三段射击后发动突进扫射，可以通过摇杆控制扫射时的移动方向。长按攻击键，会在第一段普通攻击后打出分支「圣洁烙印」，对目标施加持续一定时间的追猎标记。突进扫射会对一定范围内所有被施加追猎标记的敌人造成额外伤害。原罪猎人的闪避技能「暗裔疾行」，会在极限闪避时对周围的敌人施加追猎标记，并通过按下攻击键立即施放突进扫射进行追击。同时还会触发圣印效果，提升自身所造成的物理伤害，持续期间内再次触发极限闪避，圣印效果将会转化为圣愈效果，并回复血量。使用必杀技「埋葬乐园」，原罪猎人会传送动力机甲，轰击前方的敌人。长按攻击键持续攻击前方敌人，必杀技持续期间原罪猎人不会死亡，但也无法切换角色。</p>
+					 </div>
+					  <div class="img-section">
+					 	<img src="./img/kallen-info.png" id="kallen">
+					 </div>
+				</div>
+				<div class="article-preview">
+					 <div class="img-section">
+					 	<img src="./img/sakura-info.png" id="sakura">
+					 </div>
+					 <div class="text-section">
+					 	<h2>真炎幸魂</h2>
+					 	<p>真炎幸魂的普通攻击是快速的五连斩，打出第四段攻击后通过特定攻击节奏可以触发普攻追击，造成大量的火焰元素伤害。真炎幸魂的分支攻击也可以触发分支追击，造成元素伤害的同时使目标受到的元素伤害提升。真炎幸魂能连续闪避两次，她的闪避技能「炎舞踏」会在极限闪避时触发全局时空断裂，减速所有的敌人。「八重火垣」是真炎幸魂的必杀技，八重樱会发动连续随机突击对敌人造成大量火焰伤害，之后时空锁定大范围内的敌人，期间处于霸体状态且攻击动作变快。</p>
+					 </div>
+				</div>
+			<div class="article-preview">				
+					 <div class="text-section">
+					 	<h2>月轮</h2>
+					 	<p>「影骑士·月轮」是符华的机械属性角色，初始等级为S级。和其他符华角色一样，影骑士·月轮也可以通过将特殊攻击键与普通攻击键进行特定的组合，释放分支技能或必杀技。影骑士·月轮的普通攻击为6段攻击的寸心拳法。在寸心拳法不同段中组合特殊攻击键，可分别释放分支技能「寸劲·烈波」或「寸劲·瞬尘」。影骑士·月轮的特殊攻击键所释放的为分支技能「寸劲·阵风」，可击退敌人。特殊攻击键蓄力可以释放分支技能「死劲·残月」。在影骑士·月轮拥有足够SP时，可以蓄力释放必杀技，进入月食形态。月食形态下可释放「死劲·断海」和「死劲·裂空」。影骑士·月轮可以连续闪避两次。她的闪避技能「乌雀」会在极限闪避时对大范围敌人造成雷电元素伤害。触发极限闪避后按下特殊攻击键可以释放「寸劲·烈波」。影骑士·月轮的多项被动技能在学习后，将会为普通攻击、分支技能或必杀技附带大量雷电元素伤害、禁锢敌人、使敌人流血等附加效果，使不同的分支技能、必杀技有不同作用。</p>
+					 </div>
+					  <div class="img-section">
+					 	<img src="./img/fuka-info.png" id="fuka">
+					 </div>
+				</div>
+				<div class="article-preview">
+					 <div class="img-section">
+					 	<img src="./img/theresa-info.png" id="theresa">
+					 </div>
+					 <div class="text-section">
+					 	<h2>月下初拥</h2>
+					 	<p>「月下初拥」是德丽莎的生物属性角色，是「女武神·誓约」的觉醒角色，也是崩坏3首个跨属性觉醒角色。月下初拥的普通攻击「不洁双刃」为多段连续短剑穿刺，释放十字架后，普通攻击的速度将提升。使用蓄力攻击「堕落之斧」时，月下初拥将挥动巨斧猛击大范围敌人。月下初拥拥有特殊的能量槽——血印。普通攻击击中流血状态的敌人可以快速恢复血印，消耗血印可以强化蓄力攻击，斧击出手更快，伤害更高，还能使敌人流血、浮空。月下初拥可以连续闪避两次，极限闪避时会触发全剧时空断裂。使用必杀技后，月下初拥将腾跃至半空猛击大范围的敌人，随后血印将快速恢复。</p>
+					 </div>
+				</div>
+				<div class="article-preview">				
+					 <div class="text-section">
+					 	<h2>刚狼的黎明</h2>
+					 	<p>「银狼的黎明」是驱动装·山吹的灵魂觉醒角色，角色属性为异能。当使用银狼的黎明时，重装小兔19C将会脱离角色独立作战。小兔拥有角色40%的攻击力，100%的防御力和400%的血量，抵抗50%元素伤害，免疫大部分控制。银狼的黎明可以使用非蓄力普通攻击指引小兔对特定目标发动特殊攻击。银狼的黎明的闪避技能「虚时闪烁」会在极限闪避时召唤重装小兔攻击目标敌人，并触发时空断裂。「轰鸣震击」是银狼的黎明的必杀技，通过与小兔产生强烈的共鸣，将能够使小兔释放强力的重击并眩晕敌人。</p>
+					 </div>
+					  <div class="img-section">
+					 	<img src="./img/bronya-info.png" id="bronya">
+					 </div>
+				</div>
+			</section>
+			<section class="purple-section">
+				<div class="heading-wrapper">
+					<h2>更多最新活动(More recent activities)</h2>
+					<div class="hr"></div>
+					<div class="sub-heading">
+						爱酱迫不及待的要为指挥官您推送活动啦！
+					</div>				
+					
+				</div>
+				<div class="card-group clearFix">
+						<div class="card">
+							<h3>​<a href="#">化妆舞会~《崩坏3》Cosplay作品征集活动开启！</a></h3>
+							<p>这一次，舰长要不要试试具有休伯利安特色的装扮呢？帅气的作战服、大气稳重的礼服，亦或是超人气吼姆玩偶装，看上去都很不错呢！《崩坏3》Cosplay作品征集活动开启！今年的舞会季，舰长有想尝试的装扮吗？</p>
+						</div>
+						<div class="card">
+							<h3><a href="#">舰团战beta版第二期战斗即将开启！</a></h3>
+							<p>各位舰长请注意，舰团航行至中心区域，舰团战即将开启！爱酱本次为各位舰长准备了第二次模拟战役——舰团战beta的第二期战斗，希望这能够更进一步帮助舰长体验舰团战战斗。</p>
+						</div>
+						<div class="card">
+							<h3><a href="#">本期精准目标：仿犹大·血之拥抱、德古拉</a></h3>
+							<p>本次精准补给A为舰长带来处刑装·紫苑＆月下初拥适用装备「仿犹大·血之拥抱」与吸血鬼亲王套装「德古拉」。精准B为「鲜血之舞」与力学三定律套装「伊萨克·牛顿·」。</p>
+						</div>
+						<div class="card">
+							<h3><a href="#">【万圣节专属】万圣大冒险补给开启！</a> </h3>
+							<p>万圣降临，鬼怪出行。在这充斥着南瓜、鬼火和糖果的节日里，一场突如其来的冒险正等待着大家……爱酱为大家挑选了各种武器圣痕的万圣大冒险限定补给即将开启！走过路过请不要错过，这里有你冒险旅途中需要的一切！</p>
+						</div>
+						<div class="card">
+							<h3><a href="#">重燃周年活动第四期关卡更新，爱酱加入作战！</a></h3>
+							<p>10月11日4:00开始，舰长可以通过爱酱生日拼图活动获取重燃周年专属爱酱装备箱，打开即可获取经过爱酱加强的爱酱武器。完成爱酱生日拼图活动还可在活动商店中自选兑换爱酱武器与音乐武器。</p>
+						</div>
+						<div class="card">
+							<h3><a href="#">爱酱两周岁啦！快和本AI一起占领这个游戏吧</a></h3>
+							<p>爱酱两周岁啦！快和本AI一起占领这个游戏吧明明是爱酱先来的，可为什么舰长们现在都只喜欢绯玉丸了呢？爱酱的生日也没有人庆祝……这样的崩坏3是不对的…爱酱要把它变成——属于爱酱的崩坏3！呐，舰长，你会帮我的吧？</p>
+						</div>
+					</div>
+			</section>
+		</div>
+
+		<footer>
+			<div class="share">
+				<ul>
+					<li><a href="#">联系方式</a></li>
+					<li><a href="#">加入我们<a></li>
+					<li><a href="#">免责条款</a></li>
+					<li><a href="#">法律声明</a></li>
+				</ul>
+			</div>
+			<div class="copy">
+				&copy 崩坏3
+			</div>
+		</footer>
+	</div>
+</body>
+</html>
